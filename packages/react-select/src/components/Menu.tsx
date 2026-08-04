@@ -285,23 +285,7 @@ export const menuCSS = <
     theme: { borderRadius, spacing, colors },
   }: MenuProps<Option, IsMulti, Group>,
   unstyled: boolean
-): CSSObjectWithLabel => ({
-  label: 'menu',
-  [alignToControl(placement)]: '100%',
-  position: 'absolute',
-  width: '100%',
-  zIndex: 1,
-  ...(unstyled
-    ? {}
-    : {
-        backgroundColor: colors.neutral0,
-        borderRadius: borderRadius,
-        boxShadow:
-          '0 0 0 1px hsla(0, 0%, 0%, 0.1), 0 4px 11px hsla(0, 0%, 0%, 0.1)',
-        marginBottom: spacing.menuGutter,
-        marginTop: spacing.menuGutter,
-      }),
-});
+): CSSObjectWithLabel => { throw new Error("STUB"); };
 
 const PortalPlacementContext =
   createContext<{
@@ -316,76 +300,13 @@ export const MenuPlacer = <
 >(
   props: MenuPlacerProps<Option, IsMulti, Group>
 ) => {
-  const {
-    children,
-    minMenuHeight,
-    maxMenuHeight,
-    menuPlacement,
-    menuPosition,
-    menuShouldScrollIntoView,
-    theme,
-  } = props;
-
-  const { setPortalPlacement } = useContext(PortalPlacementContext) || {};
-  const ref = useRef<HTMLDivElement | null>(null);
-  const [maxHeight, setMaxHeight] = useState(maxMenuHeight);
-  const [placement, setPlacement] = useState<CoercedMenuPlacement | null>(null);
-  const { controlHeight } = theme.spacing;
-
-  useLayoutEffect(() => {
-    const menuEl = ref.current;
-    if (!menuEl) return;
-
-    // DO NOT scroll if position is fixed
-    const isFixedPosition = menuPosition === 'fixed';
-    const shouldScroll = menuShouldScrollIntoView && !isFixedPosition;
-
-    const state = getMenuPlacement({
-      maxHeight: maxMenuHeight,
-      menuEl,
-      minHeight: minMenuHeight,
-      placement: menuPlacement,
-      shouldScroll,
-      isFixedPosition,
-      controlHeight,
-    });
-
-    setMaxHeight(state.maxHeight);
-    setPlacement(state.placement);
-    setPortalPlacement?.(state.placement);
-  }, [
-    maxMenuHeight,
-    menuPlacement,
-    menuPosition,
-    menuShouldScrollIntoView,
-    minMenuHeight,
-    setPortalPlacement,
-    controlHeight,
-  ]);
-
-  return children({
-    ref,
-    placerProps: {
-      ...props,
-      placement: placement || coercePlacement(menuPlacement),
-      maxHeight,
-    },
-  });
+    throw new Error("STUB");
 };
 
 const Menu = <Option, IsMulti extends boolean, Group extends GroupBase<Option>>(
   props: MenuProps<Option, IsMulti, Group>
 ) => {
-  const { children, innerRef, innerProps } = props;
-  return (
-    <div
-      {...getStyleProps(props, 'menu', { menu: true })}
-      ref={innerRef}
-      {...innerProps}
-    >
-      {children}
-    </div>
-  );
+    throw new Error("STUB");
 };
 
 export default Menu;
@@ -422,18 +343,7 @@ export const menuListCSS = <
     },
   }: MenuListProps<Option, IsMulti, Group>,
   unstyled: boolean
-): CSSObjectWithLabel => ({
-  maxHeight,
-  overflowY: 'auto',
-  position: 'relative', // required for offset[Height, Top] > keyboard scroll
-  WebkitOverflowScrolling: 'touch',
-  ...(unstyled
-    ? {}
-    : {
-        paddingBottom: baseUnit,
-        paddingTop: baseUnit,
-      }),
-});
+): CSSObjectWithLabel => { throw new Error("STUB"); };
 export const MenuList = <
   Option,
   IsMulti extends boolean,
@@ -441,19 +351,7 @@ export const MenuList = <
 >(
   props: MenuListProps<Option, IsMulti, Group>
 ) => {
-  const { children, innerProps, innerRef, isMulti } = props;
-  return (
-    <div
-      {...getStyleProps(props, 'menuList', {
-        'menu-list': true,
-        'menu-list--is-multi': isMulti,
-      })}
-      ref={innerRef}
-      {...innerProps}
-    >
-      {children}
-    </div>
-  );
+    throw new Error("STUB");
 };
 
 // ==============================
@@ -472,15 +370,7 @@ const noticeCSS = <
     },
   }: NoticeProps<Option, IsMulti, Group>,
   unstyled: boolean
-): CSSObjectWithLabel => ({
-  textAlign: 'center',
-  ...(unstyled
-    ? {}
-    : {
-        color: colors.neutral40,
-        padding: `${baseUnit * 2}px ${baseUnit * 3}px`,
-      }),
-});
+): CSSObjectWithLabel => { throw new Error("STUB"); };
 export const noOptionsMessageCSS = noticeCSS;
 export const loadingMessageCSS = noticeCSS;
 
@@ -504,21 +394,7 @@ export const NoOptionsMessage = <
   innerProps,
   ...restProps
 }: NoticeProps<Option, IsMulti, Group>) => {
-  return (
-    <div
-      {...getStyleProps(
-        { ...restProps, children, innerProps },
-        'noOptionsMessage',
-        {
-          'menu-notice': true,
-          'menu-notice--no-options': true,
-        }
-      )}
-      {...innerProps}
-    >
-      {children}
-    </div>
-  );
+    throw new Error("STUB");
 };
 
 export const LoadingMessage = <
@@ -530,21 +406,7 @@ export const LoadingMessage = <
   innerProps,
   ...restProps
 }: NoticeProps<Option, IsMulti, Group>) => {
-  return (
-    <div
-      {...getStyleProps(
-        { ...restProps, children, innerProps },
-        'loadingMessage',
-        {
-          'menu-notice': true,
-          'menu-notice--loading': true,
-        }
-      )}
-      {...innerProps}
-    >
-      {children}
-    </div>
-  );
+    throw new Error("STUB");
 };
 
 // ==============================
@@ -574,13 +436,7 @@ export const menuPortalCSS = ({
   rect,
   offset,
   position,
-}: PortalStyleArgs): CSSObjectWithLabel => ({
-  left: rect.left,
-  position: position,
-  top: offset,
-  width: rect.width,
-  zIndex: 1,
-});
+}: PortalStyleArgs): CSSObjectWithLabel => { throw new Error("STUB"); };
 
 interface ComputedPosition {
   offset: number;
@@ -594,112 +450,5 @@ export const MenuPortal = <
 >(
   props: MenuPortalProps<Option, IsMulti, Group>
 ) => {
-  const {
-    appendTo,
-    children,
-    controlElement,
-    innerProps,
-    menuPlacement,
-    menuPosition,
-  } = props;
-
-  const menuPortalRef = useRef<HTMLDivElement | null>(null);
-  const cleanupRef = useRef<(() => void) | void | null>(null);
-
-  const [placement, setPortalPlacement] = useState<'bottom' | 'top'>(
-    coercePlacement(menuPlacement)
-  );
-  const portalPlacementContext = useMemo(
-    () => ({
-      setPortalPlacement,
-    }),
-    []
-  );
-  const [computedPosition, setComputedPosition] =
-    useState<ComputedPosition | null>(null);
-
-  const updateComputedPosition = useCallback(() => {
-    if (!controlElement) return;
-
-    const rect = getBoundingClientObj(controlElement);
-    const scrollDistance = menuPosition === 'fixed' ? 0 : window.pageYOffset;
-    const offset = rect[placement] + scrollDistance;
-    if (
-      offset !== computedPosition?.offset ||
-      rect.left !== computedPosition?.rect.left ||
-      rect.width !== computedPosition?.rect.width
-    ) {
-      setComputedPosition({ offset, rect });
-    }
-  }, [
-    controlElement,
-    menuPosition,
-    placement,
-    computedPosition?.offset,
-    computedPosition?.rect.left,
-    computedPosition?.rect.width,
-  ]);
-
-  useLayoutEffect(() => {
-    updateComputedPosition();
-  }, [updateComputedPosition]);
-
-  const runAutoUpdate = useCallback(() => {
-    if (typeof cleanupRef.current === 'function') {
-      cleanupRef.current();
-      cleanupRef.current = null;
-    }
-
-    if (controlElement && menuPortalRef.current) {
-      cleanupRef.current = autoUpdate(
-        controlElement,
-        menuPortalRef.current,
-        updateComputedPosition,
-        { elementResize: 'ResizeObserver' in window }
-      );
-    }
-  }, [controlElement, updateComputedPosition]);
-
-  useLayoutEffect(() => {
-    runAutoUpdate();
-  }, [runAutoUpdate]);
-
-  const setMenuPortalElement = useCallback(
-    (menuPortalElement: HTMLDivElement) => {
-      menuPortalRef.current = menuPortalElement;
-      runAutoUpdate();
-    },
-    [runAutoUpdate]
-  );
-
-  // bail early if required elements aren't present
-  if ((!appendTo && menuPosition !== 'fixed') || !computedPosition) return null;
-
-  // same wrapper element whether fixed or portalled
-  const menuWrapper = (
-    <div
-      ref={setMenuPortalElement}
-      {...getStyleProps(
-        {
-          ...props,
-          offset: computedPosition.offset,
-          position: menuPosition,
-          rect: computedPosition.rect,
-        },
-        'menuPortal',
-        {
-          'menu-portal': true,
-        }
-      )}
-      {...innerProps}
-    >
-      {children}
-    </div>
-  );
-
-  return (
-    <PortalPlacementContext.Provider value={portalPlacementContext}>
-      {appendTo ? createPortal(menuWrapper, appendTo) : menuWrapper}
-    </PortalPlacementContext.Provider>
-  );
+    throw new Error("STUB");
 };

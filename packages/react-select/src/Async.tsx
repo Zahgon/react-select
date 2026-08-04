@@ -29,11 +29,8 @@ const AsyncSelect = forwardRef(
       | MutableRefObject<Select<Option, IsMulti, Group> | null>
       | null
   ) => {
-    const stateManagedProps = useAsync(props);
-    const selectProps = useStateManager(stateManagedProps);
-
-    return <Select ref={ref} {...selectProps} />;
-  }
+        throw new Error("STUB");
+    }
 ) as AsyncSelect;
 
 export { useAsync };

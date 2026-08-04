@@ -27,9 +27,7 @@ const AnimatedInput = (WrappedComponent: InputComponent): InputComponent => {
     enter,
     exit,
     ...props
-  }: AnimatedInputProps<Option, IsMulti, Group>) => (
-    <WrappedComponent {...props} />
-  );
+  }: AnimatedInputProps<Option, IsMulti, Group>) => { throw new Error("STUB"); };
 };
 
 export default AnimatedInput;

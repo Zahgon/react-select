@@ -15,11 +15,7 @@ interface Props {
 }
 
 const blurSelectInput = (event: MouseEvent<HTMLDivElement>) => {
-  const element = event.target as HTMLDivElement;
-  return (
-    element.ownerDocument.activeElement &&
-    (element.ownerDocument.activeElement as HTMLElement).blur()
-  );
+    throw new Error("STUB");
 };
 
 export default function ScrollManager({
@@ -31,29 +27,5 @@ export default function ScrollManager({
   onTopArrive,
   onTopLeave,
 }: Props) {
-  const setScrollCaptureTarget = useScrollCapture({
-    isEnabled: captureEnabled,
-    onBottomArrive,
-    onBottomLeave,
-    onTopArrive,
-    onTopLeave,
-  });
-  const setScrollLockTarget = useScrollLock({ isEnabled: lockEnabled });
-
-  const targetRef: RefCallback<HTMLElement> = (element) => {
-    setScrollCaptureTarget(element);
-    setScrollLockTarget(element);
-  };
-
-  return (
-    <Fragment>
-      {lockEnabled && (
-        <div
-          onClick={blurSelectInput}
-          css={{ position: 'fixed', left: 0, bottom: 0, right: 0, top: 0 }}
-        />
-      )}
-      {children(targetRef)}
-    </Fragment>
-  );
+    throw new Error("STUB");
 }

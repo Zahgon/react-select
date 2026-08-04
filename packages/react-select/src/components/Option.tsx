@@ -47,38 +47,7 @@ export const optionCSS = <
     theme: { spacing, colors },
   }: OptionProps<Option, IsMulti, Group>,
   unstyled: boolean
-): CSSObjectWithLabel => ({
-  label: 'option',
-  cursor: 'default',
-  display: 'block',
-  fontSize: 'inherit',
-  width: '100%',
-  userSelect: 'none',
-  WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
-  ...(unstyled
-    ? {}
-    : {
-        backgroundColor: isSelected
-          ? colors.primary
-          : isFocused
-          ? colors.primary25
-          : 'transparent',
-        color: isDisabled
-          ? colors.neutral20
-          : isSelected
-          ? colors.neutral0
-          : 'inherit',
-        padding: `${spacing.baseUnit * 2}px ${spacing.baseUnit * 3}px`,
-        // provide some affordance on touch devices
-        ':active': {
-          backgroundColor: !isDisabled
-            ? isSelected
-              ? colors.primary
-              : colors.primary50
-            : undefined,
-        },
-      }),
-});
+): CSSObjectWithLabel => { throw new Error("STUB"); };
 
 const Option = <
   Option,
@@ -87,23 +56,7 @@ const Option = <
 >(
   props: OptionProps<Option, IsMulti, Group>
 ) => {
-  const { children, isDisabled, isFocused, isSelected, innerRef, innerProps } =
-    props;
-  return (
-    <div
-      {...getStyleProps(props, 'option', {
-        option: true,
-        'option--is-disabled': isDisabled,
-        'option--is-focused': isFocused,
-        'option--is-selected': isSelected,
-      })}
-      ref={innerRef}
-      aria-disabled={isDisabled}
-      {...innerProps}
-    >
-      {children}
-    </div>
-  );
+    throw new Error("STUB");
 };
 
 export default Option;

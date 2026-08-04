@@ -26,11 +26,7 @@ const AnimatedMultiValue = (WrappedComponent: MultiValueComponent) => {
     in: inProp,
     onExited,
     ...props
-  }: AnimatedMultiValueProps<Option, IsMulti, Group>) => (
-    <Collapse in={inProp} onExited={onExited}>
-      <WrappedComponent cropWithEllipsis={inProp} {...props} />
-    </Collapse>
-  );
+  }: AnimatedMultiValueProps<Option, IsMulti, Group>) => { throw new Error("STUB"); };
 };
 
 export default AnimatedMultiValue;

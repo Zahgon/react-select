@@ -15,8 +15,10 @@ import type {
 // NO OP
 // ==============================
 
-export const noop = () => {};
-export const emptyString = () => '';
+export const noop = () => {
+    throw new Error("STUB");
+};
+export const emptyString = () => { throw new Error("STUB"); };
 
 // ==============================
 // Class Name Prefixer
@@ -32,13 +34,7 @@ export const emptyString = () => '';
    @returns 'react-select__comp react-select__comp--some'
 */
 function applyPrefixToName(prefix: string, name: string) {
-  if (!name) {
-    return prefix;
-  } else if (name[0] === '-') {
-    return prefix + name;
-  } else {
-    return prefix + '__' + name;
-  }
+    throw new Error("STUB");
 }
 
 export function classNames(
@@ -46,19 +42,7 @@ export function classNames(
   state?: ClassNamesState,
   ...classNameList: string[]
 ) {
-  const arr = [...classNameList];
-  if (state && prefix) {
-    for (let key in state) {
-      if (state.hasOwnProperty(key) && state[key]) {
-        arr.push(`${applyPrefixToName(prefix, key)}`);
-      }
-    }
-  }
-
-  return arr
-    .filter((i) => i)
-    .map((i) => String(i).trim())
-    .join(' ');
+    throw new Error("STUB");
 }
 // ==============================
 // Clean Value
@@ -265,24 +249,7 @@ export function scrollIntoView(
   menuEl: HTMLElement,
   focusedEl: HTMLElement
 ): void {
-  const menuRect = menuEl.getBoundingClientRect();
-  const focusedRect = focusedEl.getBoundingClientRect();
-  const overScroll = focusedEl.offsetHeight / 3;
-
-  if (focusedRect.bottom + overScroll > menuRect.bottom) {
-    scrollTo(
-      menuEl,
-      Math.min(
-        focusedEl.offsetTop +
-          focusedEl.clientHeight -
-          menuEl.offsetHeight +
-          overScroll,
-        menuEl.scrollHeight
-      )
-    );
-  } else if (focusedRect.top - overScroll < menuRect.top) {
-    scrollTo(menuEl, Math.max(focusedEl.offsetTop - overScroll, 0));
-  }
+    throw new Error("STUB");
 }
 
 // ==============================
@@ -314,7 +281,7 @@ export interface RectType {
 // ==============================
 
 export function toKey(str: string) {
-  return str.replace(/\W/g, '-');
+    throw new Error("STUB");
 }
 
 // ==============================
@@ -352,8 +319,8 @@ export function isMobileDevice() {
 let passiveOptionAccessed = false;
 const options = {
   get passive() {
-    return (passiveOptionAccessed = true);
-  },
+        throw new Error("STUB");
+    },
 };
 // check for SSR
 const w:
@@ -368,7 +335,7 @@ if (w.addEventListener && w.removeEventListener) {
 export const supportsPassiveEvents: boolean = passiveOptionAccessed;
 
 export function notNullish<T>(item: T | null | undefined): item is T {
-  return item != null;
+    throw new Error("STUB");
 }
 
 export function isArray<T>(arg: unknown): arg is readonly T[] {
@@ -386,25 +353,18 @@ export function valueTernary<Option, IsMulti extends boolean>(
 export function singleValueAsValue<Option, IsMulti extends boolean>(
   singleValue: SingleValue<Option>
 ): OnChangeValue<Option, IsMulti> {
-  return singleValue as OnChangeValue<Option, IsMulti>;
+    throw new Error("STUB");
 }
 
 export function multiValueAsValue<Option, IsMulti extends boolean>(
   multiValue: MultiValue<Option>
 ): OnChangeValue<Option, IsMulti> {
-  return multiValue as OnChangeValue<Option, IsMulti>;
+    throw new Error("STUB");
 }
 
 export const removeProps = <Props extends object, K extends string[]>(
   propsObj: Props,
   ...properties: K
 ): Omit<Props, K[number]> => {
-  let propsMap = Object.entries(propsObj).filter(
-    ([key]) => !properties.includes(key)
-  );
-
-  return propsMap.reduce((newProps: { [key: string]: any }, [key, val]) => {
-    newProps[key] = val;
-    return newProps;
-  }, {}) as Omit<Props, K[number]>;
+    throw new Error("STUB");
 };

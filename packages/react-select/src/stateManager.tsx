@@ -29,10 +29,8 @@ const StateManagedSelect = forwardRef(
       | MutableRefObject<Select<Option, IsMulti, Group> | null>
       | null
   ) => {
-    const baseSelectProps = useStateManager(props);
-
-    return <Select ref={ref} {...baseSelectProps} />;
-  }
+        throw new Error("STUB");
+    }
 ) as StateManagedSelect;
 
 export default StateManagedSelect;

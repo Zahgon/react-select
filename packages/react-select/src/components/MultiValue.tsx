@@ -45,18 +45,7 @@ export const multiValueCSS = <
     theme: { spacing, borderRadius, colors },
   }: MultiValueProps<Option, IsMulti, Group>,
   unstyled: boolean
-): CSSObjectWithLabel => ({
-  label: 'multiValue',
-  display: 'flex',
-  minWidth: 0, // resolves flex/text-overflow bug
-  ...(unstyled
-    ? {}
-    : {
-        backgroundColor: colors.neutral10,
-        borderRadius: borderRadius / 2,
-        margin: spacing.baseUnit / 2,
-      }),
-});
+): CSSObjectWithLabel => { throw new Error("STUB"); };
 
 export const multiValueLabelCSS = <
   Option,
@@ -68,21 +57,7 @@ export const multiValueLabelCSS = <
     cropWithEllipsis,
   }: MultiValueProps<Option, IsMulti, Group>,
   unstyled: boolean
-): CSSObjectWithLabel => ({
-  overflow: 'hidden',
-  textOverflow:
-    cropWithEllipsis || cropWithEllipsis === undefined ? 'ellipsis' : undefined,
-  whiteSpace: 'nowrap',
-  ...(unstyled
-    ? {}
-    : {
-        borderRadius: borderRadius / 2,
-        color: colors.neutral80,
-        fontSize: '85%',
-        padding: 3,
-        paddingLeft: 6,
-      }),
-});
+): CSSObjectWithLabel => { throw new Error("STUB"); };
 
 export const multiValueRemoveCSS = <
   Option,
@@ -94,22 +69,7 @@ export const multiValueRemoveCSS = <
     isFocused,
   }: MultiValueProps<Option, IsMulti, Group>,
   unstyled: boolean
-): CSSObjectWithLabel => ({
-  alignItems: 'center',
-  display: 'flex',
-  ...(unstyled
-    ? {}
-    : {
-        borderRadius: borderRadius / 2,
-        backgroundColor: isFocused ? colors.dangerLight : undefined,
-        paddingLeft: spacing.baseUnit,
-        paddingRight: spacing.baseUnit,
-        ':hover': {
-          backgroundColor: colors.dangerLight,
-          color: colors.danger,
-        },
-      }),
-});
+): CSSObjectWithLabel => { throw new Error("STUB"); };
 
 export interface MultiValueGenericProps<
   Option = unknown,
@@ -128,9 +88,7 @@ export const MultiValueGeneric = <
 >({
   children,
   innerProps,
-}: MultiValueGenericProps<Option, IsMulti, Group>) => (
-  <div {...innerProps}>{children}</div>
-);
+}: MultiValueGenericProps<Option, IsMulti, Group>) => { throw new Error("STUB"); };
 
 export const MultiValueContainer = MultiValueGeneric;
 export const MultiValueLabel = MultiValueGeneric;
@@ -149,11 +107,7 @@ export function MultiValueRemove<
   IsMulti extends boolean,
   Group extends GroupBase<Option>
 >({ children, innerProps }: MultiValueRemoveProps<Option, IsMulti, Group>) {
-  return (
-    <div role="button" {...innerProps}>
-      {children || <CrossIcon size={14} />}
-    </div>
-  );
+    throw new Error("STUB");
 }
 
 const MultiValue = <
@@ -163,54 +117,7 @@ const MultiValue = <
 >(
   props: MultiValueProps<Option, IsMulti, Group>
 ) => {
-  const {
-    children,
-    components,
-    data,
-    innerProps,
-    isDisabled,
-    removeProps,
-    selectProps,
-  } = props;
-
-  const { Container, Label, Remove } = components;
-
-  return (
-    <Container
-      data={data}
-      innerProps={{
-        ...getStyleProps(props, 'multiValue', {
-          'multi-value': true,
-          'multi-value--is-disabled': isDisabled,
-        }),
-        ...innerProps,
-      }}
-      selectProps={selectProps}
-    >
-      <Label
-        data={data}
-        innerProps={{
-          ...getStyleProps(props, 'multiValueLabel', {
-            'multi-value__label': true,
-          }),
-        }}
-        selectProps={selectProps}
-      >
-        {children}
-      </Label>
-      <Remove
-        data={data}
-        innerProps={{
-          ...getStyleProps(props, 'multiValueRemove', {
-            'multi-value__remove': true,
-          }),
-          'aria-label': `Remove ${children || 'option'}`,
-          ...removeProps,
-        }}
-        selectProps={selectProps}
-      />
-    </Container>
-  );
+    throw new Error("STUB");
 };
 
 export default MultiValue;

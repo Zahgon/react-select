@@ -22,19 +22,13 @@ const AnimatedValueContainer =
   <Option, IsMulti extends boolean, Group extends GroupBase<Option>>(
     props: ValueContainerProps<Option, IsMulti, Group>
   ) =>
-    props.isMulti ? (
-      <IsMultiValueContainer component={WrappedComponent} {...(props as any)} />
-    ) : (
-      <TransitionGroup component={WrappedComponent} {...(props as any)} />
-    );
+    { throw new Error("STUB"); };
 
 const IsMultiValueContainer = ({
   component,
   ...restProps
 }: IsMultiValueContainerProps) => {
-  const multiProps = useIsMultiValueContainer(restProps);
-
-  return <TransitionGroup component={component} {...(multiProps as any)} />;
+    throw new Error("STUB");
 };
 
 const useIsMultiValueContainer = ({
@@ -54,33 +48,17 @@ const useIsMultiValueContainer = ({
   const [removingValue, setRemovingValue] = useState(false);
 
   useEffect(() => {
-    if (hasValue && !cssDisplayFlex) {
-      setCssDisplayFlex(true);
-    }
+      throw new Error("STUB");
   }, [hasValue, cssDisplayFlex]);
 
   useEffect(() => {
-    if (removingValue && !hasValue && cssDisplayFlex) {
-      setCssDisplayFlex(false);
-    }
-    setRemovingValue(false);
+      throw new Error("STUB");
   }, [removingValue, hasValue, cssDisplayFlex]);
 
   const onExited = () => setRemovingValue(true);
 
   const childMapper = (child: ReactNode) => {
-    if (isMulti && React.isValidElement(child)) {
-      // Add onExited callback to MultiValues
-      if (child.type === components.MultiValue) {
-        return React.cloneElement(child, { onExited });
-      }
-      // While container flexed, Input cursor is shown after Placeholder text,
-      // so remove Placeholder until display is set back to grid
-      if (child.type === components.Placeholder && cssDisplayFlex) {
-        return null;
-      }
-    }
-    return child;
+      throw new Error("STUB");
   };
 
   const newInnerProps = {

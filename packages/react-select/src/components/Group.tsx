@@ -51,12 +51,7 @@ export const groupCSS = <
   { theme: { spacing } }: GroupProps<Option, IsMulti, Group>,
   unstyled: boolean
 ): CSSObjectWithLabel =>
-  unstyled
-    ? {}
-    : {
-        paddingBottom: spacing.baseUnit * 2,
-        paddingTop: spacing.baseUnit * 2,
-      };
+  { throw new Error("STUB"); };
 
 const Group = <
   Option,
@@ -65,33 +60,7 @@ const Group = <
 >(
   props: GroupProps<Option, IsMulti, Group>
 ) => {
-  const {
-    children,
-    cx,
-    getStyles,
-    getClassNames,
-    Heading,
-    headingProps,
-    innerProps,
-    label,
-    theme,
-    selectProps,
-  } = props;
-  return (
-    <div {...getStyleProps(props, 'group', { group: true })} {...innerProps}>
-      <Heading
-        {...headingProps}
-        selectProps={selectProps}
-        theme={theme}
-        getStyles={getStyles}
-        getClassNames={getClassNames}
-        cx={cx}
-      >
-        {label}
-      </Heading>
-      <div>{children}</div>
-    </div>
-  );
+    throw new Error("STUB");
 };
 
 interface GroupHeadingPropsDefinedProps<
@@ -121,22 +90,7 @@ export const groupHeadingCSS = <
 >(
   { theme: { colors, spacing } }: GroupHeadingProps<Option, IsMulti, Group>,
   unstyled: boolean
-): CSSObjectWithLabel => ({
-  label: 'group',
-  cursor: 'default',
-  display: 'block',
-  ...(unstyled
-    ? {}
-    : {
-        color: colors.neutral40,
-        fontSize: '75%',
-        fontWeight: 500,
-        marginBottom: '0.25em',
-        paddingLeft: spacing.baseUnit * 3,
-        paddingRight: spacing.baseUnit * 3,
-        textTransform: 'uppercase',
-      }),
-});
+): CSSObjectWithLabel => { throw new Error("STUB"); };
 
 export const GroupHeading = <
   Option,
@@ -145,13 +99,7 @@ export const GroupHeading = <
 >(
   props: GroupHeadingProps<Option, IsMulti, Group>
 ) => {
-  const { data, ...innerProps } = cleanCommonProps(props);
-  return (
-    <div
-      {...getStyleProps(props, 'groupHeading', { 'group-heading': true })}
-      {...innerProps}
-    />
-  );
+    throw new Error("STUB");
 };
 
 export default Group;

@@ -18,12 +18,6 @@ const AnimatedPlaceholder =
   <Option, IsMulti extends boolean, Group extends GroupBase<Option>>(
     props: PlaceholderProps<Option, IsMulti, Group>
   ) =>
-    (
-      <Fade<PlaceholderProps<Option, IsMulti, Group>>
-        component={WrappedComponent}
-        duration={props.isMulti ? collapseDuration : 1}
-        {...props}
-      />
-    );
+    { throw new Error("STUB"); };
 
 export default AnimatedPlaceholder;

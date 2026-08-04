@@ -32,12 +32,7 @@ export const containerCSS = <
 >({
   isDisabled,
   isRtl,
-}: ContainerProps<Option, IsMulti, Group>): CSSObjectWithLabel => ({
-  label: 'container',
-  direction: isRtl ? 'rtl' : undefined,
-  pointerEvents: isDisabled ? 'none' : undefined, // cancel mouse events when disabled
-  position: 'relative',
-});
+}: ContainerProps<Option, IsMulti, Group>): CSSObjectWithLabel => { throw new Error("STUB"); };
 export const SelectContainer = <
   Option,
   IsMulti extends boolean,
@@ -45,18 +40,7 @@ export const SelectContainer = <
 >(
   props: ContainerProps<Option, IsMulti, Group>
 ) => {
-  const { children, innerProps, isDisabled, isRtl } = props;
-  return (
-    <div
-      {...getStyleProps(props, 'container', {
-        '--is-disabled': isDisabled,
-        '--is-rtl': isRtl,
-      })}
-      {...innerProps}
-    >
-      {children}
-    </div>
-  );
+    throw new Error("STUB");
 };
 
 // ==============================
@@ -86,20 +70,7 @@ export const valueContainerCSS = <
     selectProps: { controlShouldRenderValue },
   }: ValueContainerProps<Option, IsMulti, Group>,
   unstyled: boolean
-): CSSObjectWithLabel => ({
-  alignItems: 'center',
-  display: isMulti && hasValue && controlShouldRenderValue ? 'flex' : 'grid',
-  flex: 1,
-  flexWrap: 'wrap',
-  WebkitOverflowScrolling: 'touch',
-  position: 'relative',
-  overflow: 'hidden',
-  ...(unstyled
-    ? {}
-    : {
-        padding: `${spacing.baseUnit / 2}px ${spacing.baseUnit * 2}px`,
-      }),
-});
+): CSSObjectWithLabel => { throw new Error("STUB"); };
 export const ValueContainer = <
   Option,
   IsMulti extends boolean,
@@ -107,20 +78,7 @@ export const ValueContainer = <
 >(
   props: ValueContainerProps<Option, IsMulti, Group>
 ) => {
-  const { children, innerProps, isMulti, hasValue } = props;
-
-  return (
-    <div
-      {...getStyleProps(props, 'valueContainer', {
-        'value-container': true,
-        'value-container--is-multi': isMulti,
-        'value-container--has-value': hasValue,
-      })}
-      {...innerProps}
-    >
-      {children}
-    </div>
-  );
+    throw new Error("STUB");
 };
 
 // ==============================
@@ -139,12 +97,7 @@ export interface IndicatorsContainerProps<
   innerProps?: {};
 }
 
-export const indicatorsContainerCSS = (): CSSObjectWithLabel => ({
-  alignItems: 'center',
-  alignSelf: 'stretch',
-  display: 'flex',
-  flexShrink: 0,
-});
+export const indicatorsContainerCSS = (): CSSObjectWithLabel => { throw new Error("STUB"); };
 export const IndicatorsContainer = <
   Option,
   IsMulti extends boolean,
@@ -152,16 +105,5 @@ export const IndicatorsContainer = <
 >(
   props: IndicatorsContainerProps<Option, IsMulti, Group>
 ) => {
-  const { children, innerProps } = props;
-
-  return (
-    <div
-      {...getStyleProps(props, 'indicatorsContainer', {
-        indicators: true,
-      })}
-      {...innerProps}
-    >
-      {children}
-    </div>
-  );
+    throw new Error("STUB");
 };

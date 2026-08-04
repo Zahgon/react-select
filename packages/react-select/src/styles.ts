@@ -140,20 +140,5 @@ export function mergeStyles<
   source: StylesConfig<Option, IsMulti, Group>,
   target: StylesConfig<Option, IsMulti, Group> = {}
 ) {
-  // initialize with source styles
-  const styles = { ...source };
-
-  // massage in target styles
-  Object.keys(target).forEach((keyAsString) => {
-    const key = keyAsString as keyof StylesConfig<Option, IsMulti, Group>;
-    if (source[key]) {
-      styles[key] = (rsCss: any, props: any) => {
-        return target[key]!(source[key]!(rsCss, props), props);
-      };
-    } else {
-      styles[key] = target[key] as any;
-    }
-  });
-
-  return styles;
+    throw new Error("STUB");
 }

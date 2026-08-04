@@ -5,27 +5,6 @@ import { jsx } from '@emotion/react';
 const RequiredInput: FunctionComponent<{
   readonly name?: string;
   readonly onFocus: FocusEventHandler<HTMLInputElement>;
-}> = ({ name, onFocus }) => (
-  <input
-    required
-    name={name}
-    tabIndex={-1}
-    aria-hidden="true"
-    onFocus={onFocus}
-    css={{
-      label: 'requiredInput',
-      opacity: 0,
-      pointerEvents: 'none',
-      position: 'absolute',
-      bottom: 0,
-      left: 0,
-      right: 0,
-      width: '100%',
-    }}
-    // Prevent `Switching from uncontrolled to controlled` error
-    value=""
-    onChange={() => {}}
-  />
-);
+}> = ({ name, onFocus }) => { throw new Error("STUB"); };
 
 export default RequiredInput;

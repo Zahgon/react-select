@@ -11,9 +11,5 @@ interface NonceProviderProps {
 }
 
 export default ({ nonce, children, cacheKey }: NonceProviderProps) => {
-  const emotionCache = useMemo(
-    () => createCache({ key: cacheKey, nonce }),
-    [cacheKey, nonce]
-  );
-  return <CacheProvider value={emotionCache}>{children}</CacheProvider>;
+    throw new Error("STUB");
 };

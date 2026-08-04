@@ -79,27 +79,15 @@ const compareOption = <Option>(
 };
 
 const builtins = {
-  formatCreateLabel: (inputValue: string) => `Create "${inputValue}"`,
+  formatCreateLabel: (inputValue: string) => { throw new Error("STUB"); },
   isValidNewOption: <Option, Group extends GroupBase<Option>>(
     inputValue: string,
     selectValue: Options<Option>,
     selectOptions: OptionsOrGroups<Option, Group>,
     accessors: Accessors<Option>
   ) =>
-    !(
-      !inputValue ||
-      selectValue.some((option) =>
-        compareOption(inputValue, option, accessors)
-      ) ||
-      selectOptions.some((option) =>
-        compareOption(inputValue, option as Option, accessors)
-      )
-    ),
-  getNewOptionData: (inputValue: string, optionLabel: ReactNode) => ({
-    label: optionLabel,
-    value: inputValue,
-    __isNew__: true,
-  }),
+    { throw new Error("STUB"); },
+  getNewOptionData: (inputValue: string, optionLabel: ReactNode) => { throw new Error("STUB"); },
 };
 
 export default function useCreatable<
@@ -134,12 +122,7 @@ export default function useCreatable<
 
   const newOption = useMemo(
     () =>
-      isValidNewOption(inputValue, cleanValue(value), propsOptions, {
-        getOptionValue,
-        getOptionLabel,
-      })
-        ? getNewOptionData(inputValue, formatCreateLabel(inputValue))
-        : undefined,
+      { throw new Error("STUB"); },
     [
       formatCreateLabel,
       getNewOptionData,
@@ -154,11 +137,7 @@ export default function useCreatable<
 
   const options = useMemo(
     () =>
-      (allowCreateWhileLoading || !isLoading) && newOption
-        ? createOptionPosition === 'first'
-          ? [newOption, ...propsOptions]
-          : [...propsOptions, newOption]
-        : propsOptions,
+      { throw new Error("STUB"); },
     [
       allowCreateWhileLoading,
       createOptionPosition,
@@ -173,33 +152,8 @@ export default function useCreatable<
       newValue: OnChangeValue<Option, IsMulti>,
       actionMeta: ActionMeta<Option>
     ) => {
-      if (actionMeta.action !== 'select-option') {
-        return propsOnChange(newValue, actionMeta);
-      }
-      const valueArray = Array.isArray(newValue) ? newValue : [newValue];
-
-      if (valueArray[valueArray.length - 1] === newOption) {
-        if (onCreateOption) onCreateOption(inputValue);
-        else {
-          const newOptionData = getNewOptionData(inputValue, inputValue);
-          const newActionMeta: ActionMeta<Option> = {
-            action: 'create-option',
-            name,
-            option: newOptionData,
-          };
-          propsOnChange(
-            valueTernary(
-              isMulti,
-              [...cleanValue(value), newOptionData],
-              newOptionData
-            ),
-            newActionMeta
-          );
-        }
-        return;
-      }
-      propsOnChange(newValue, actionMeta);
-    },
+          throw new Error("STUB");
+      },
     [
       getNewOptionData,
       inputValue,

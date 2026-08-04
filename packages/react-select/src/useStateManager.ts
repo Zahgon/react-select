@@ -72,34 +72,21 @@ export default function useStateManager<
 
   const onChange = useCallback(
     (value: OnChangeValue<Option, IsMulti>, actionMeta: ActionMeta<Option>) => {
-      if (typeof propsOnChange === 'function') {
-        propsOnChange(value, actionMeta);
-      }
-      setStateValue(value);
-    },
+          throw new Error("STUB");
+      },
     [propsOnChange]
   );
   const onInputChange = useCallback(
     (value: string, actionMeta: InputActionMeta) => {
-      let newValue;
-      if (typeof propsOnInputChange === 'function') {
-        newValue = propsOnInputChange(value, actionMeta);
-      }
-      setStateInputValue(newValue !== undefined ? newValue : value);
-    },
+          throw new Error("STUB");
+      },
     [propsOnInputChange]
   );
   const onMenuOpen = useCallback(() => {
-    if (typeof propsOnMenuOpen === 'function') {
-      propsOnMenuOpen();
-    }
-    setStateMenuIsOpen(true);
+      throw new Error("STUB");
   }, [propsOnMenuOpen]);
   const onMenuClose = useCallback(() => {
-    if (typeof propsOnMenuClose === 'function') {
-      propsOnMenuClose();
-    }
-    setStateMenuIsOpen(false);
+      throw new Error("STUB");
   }, [propsOnMenuClose]);
 
   const inputValue =

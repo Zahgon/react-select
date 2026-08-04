@@ -33,21 +33,7 @@ export const css = <
     theme: { spacing, colors },
   }: SingleValueProps<Option, IsMulti, Group>,
   unstyled: boolean
-): CSSObjectWithLabel => ({
-  label: 'singleValue',
-  gridArea: '1 / 1 / 2 / 3',
-  maxWidth: '100%',
-  overflow: 'hidden',
-  textOverflow: 'ellipsis',
-  whiteSpace: 'nowrap',
-  ...(unstyled
-    ? {}
-    : {
-        color: isDisabled ? colors.neutral40 : colors.neutral80,
-        marginLeft: spacing.baseUnit / 2,
-        marginRight: spacing.baseUnit / 2,
-      }),
-});
+): CSSObjectWithLabel => { throw new Error("STUB"); };
 
 const SingleValue = <
   Option,
@@ -56,18 +42,7 @@ const SingleValue = <
 >(
   props: SingleValueProps<Option, IsMulti, Group>
 ) => {
-  const { children, isDisabled, innerProps } = props;
-  return (
-    <div
-      {...getStyleProps(props, 'singleValue', {
-        'single-value': true,
-        'single-value--is-disabled': isDisabled,
-      })}
-      {...innerProps}
-    >
-      {children}
-    </div>
-  );
+    throw new Error("STUB");
 };
 
 export default SingleValue;

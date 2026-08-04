@@ -19,11 +19,6 @@ const AnimatedSingleValue =
   <Option, IsMulti extends boolean, Group extends GroupBase<Option>>(
     props: SingleValueProps<Option, IsMulti, Group>
   ) =>
-    (
-      <Fade<SingleValueProps<Option, IsMulti, Group>>
-        component={WrappedComponent}
-        {...props}
-      />
-    );
+    { throw new Error("STUB"); };
 
 export default AnimatedSingleValue;

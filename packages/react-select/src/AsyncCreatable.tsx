@@ -36,12 +36,8 @@ const AsyncCreatableSelect = forwardRef(
       | MutableRefObject<Select<Option, IsMulti, Group> | null>
       | null
   ) => {
-    const stateManagerProps = useAsync(props);
-    const creatableProps = useStateManager(stateManagerProps);
-    const selectProps = useCreatable(creatableProps);
-
-    return <Select ref={ref} {...selectProps} />;
-  }
+        throw new Error("STUB");
+    }
 ) as AsyncCreatableSelect;
 
 export default AsyncCreatableSelect;

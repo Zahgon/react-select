@@ -34,11 +34,8 @@ const CreatableSelect = forwardRef(
       | MutableRefObject<Select<Option, IsMulti, Group> | null>
       | null
   ) => {
-    const creatableProps = useStateManager(props);
-    const selectProps = useCreatable(creatableProps);
-
-    return <Select ref={ref} {...selectProps} />;
-  }
+        throw new Error("STUB");
+    }
 ) as CreatableSelect;
 
 export { useCreatable };

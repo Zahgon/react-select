@@ -28,17 +28,7 @@ export const placeholderCSS = <
 >(
   { theme: { spacing, colors } }: PlaceholderProps<Option, IsMulti, Group>,
   unstyled: boolean
-): CSSObjectWithLabel => ({
-  label: 'placeholder',
-  gridArea: '1 / 1 / 2 / 3',
-  ...(unstyled
-    ? {}
-    : {
-        color: colors.neutral50,
-        marginLeft: spacing.baseUnit / 2,
-        marginRight: spacing.baseUnit / 2,
-      }),
-});
+): CSSObjectWithLabel => { throw new Error("STUB"); };
 
 const Placeholder = <
   Option,
@@ -47,17 +37,7 @@ const Placeholder = <
 >(
   props: PlaceholderProps<Option, IsMulti, Group>
 ) => {
-  const { children, innerProps } = props;
-  return (
-    <div
-      {...getStyleProps(props, 'placeholder', {
-        placeholder: true,
-      })}
-      {...innerProps}
-    >
-      {children}
-    </div>
-  );
+    throw new Error("STUB");
 };
 
 export default Placeholder;
